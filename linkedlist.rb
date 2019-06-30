@@ -9,7 +9,7 @@ class Node
 end
 
 
-class Stack #a collection of nodes, like a deck, only cares about the top node
+class Stack
     attr_reader :head
     
     def initialize
@@ -20,7 +20,7 @@ class Stack #a collection of nodes, like a deck, only cares about the top node
         @head = Node.new(value, @head) 
     end
     
-    def peek #returns the first value but doesn't remove it
+    def peek
         @head.value            
     end
     
@@ -33,7 +33,7 @@ class Stack #a collection of nodes, like a deck, only cares about the top node
     
 end
 
-def print_values(list_node) #needs to take @head and will iterate through the list to print
+def print_values(list_node)
     if list_node
         print "#{list_node.value} -->"
         print_values(list_node.next_node)
@@ -44,7 +44,7 @@ def print_values(list_node) #needs to take @head and will iterate through the li
 end
 
 
-def reverse_list(list) #pass a built stack with node values
+def reverse_list(list)
 
     reverse_stack = Stack.new
 
